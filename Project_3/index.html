@@ -1,0 +1,138 @@
+<html>
+    <head>
+        <title>About Me</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <style>
+            body{
+                background: -webkit-gradient(linear, left top, left bottom, from(#ab4545), to(#e6b5af)) fixed;
+            }
+            .Head{ 
+                
+                color:rgb(58, 9, 9);
+                text-align: left;
+                padding: 100px;
+                margin:0;
+                background-image: url(https://s3.amazonaws.com/colorslive/png/362895-Er-FKsehG35sAASL.png);
+                background-repeat: no-repeat;
+                background-size:477px;   
+                background-position-x: right;
+                animation: slideIn 3s ease-in-out;
+                
+            }
+            .Head  h1{
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-weight: 800;
+                font-size: 65px;
+                animation: slideIn 5s ease-in-out;
+            }
+            .nav{
+                width:100%;
+                float:none;
+                padding: 40;
+                margin: 0;
+                background-color: rgb(176, 87, 87);
+                overflow: hidden;
+            }
+            div.transbox{
+                margin: 0 0 0 50;
+                background-color: rgb(255, 255, 255);
+                border: 1px solid black;
+                
+                width:1000px;
+                animation: flash-in 5s ease-in-out;
+            }
+            div.transbox p {
+            margin: 10;
+            font-weight: bold;
+            color: #272121;
+            text-align: center;
+            font-size: xx-large;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight:800;
+
+            }
+            img{
+                display: block;
+                width: 30%;
+                padding: 0.2%;
+                margin: 10px auto;
+                background-color: rgb(244, 241, 241);
+                overflow: auto;
+                animation: flash-in 12s ease-in-out;
+
+            }
+            .spidy p{
+                text-indent: 80px;
+                font-size: medium;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                color: #440909;
+                background-color: white ;
+                border-radius: 20px;
+                width: 80%;
+               padding: 2%;
+               margin-left: 10%;
+            }
+            @keyframes slideIn {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes flash-in{
+    0%{ opacity: 0}
+    100%{ opacity: 1}
+}
+
+.hidden{
+    opacity: 0;
+    transition: opacity 15s ease;    
+}
+
+
+        </style>
+        <body>
+            <div class="Head">
+                <h1> Hey! SpiderMan here </h1>
+            </div>
+            <div class="nav">
+               
+                <div class="transbox">
+                    <p>This page talks about me</p>
+                </div>
+            
+            </div>
+            <div class="Spidy hidden">
+                <img src="https://images.unsplash.com/photo-1635805737707-575885ab0820?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3BpZGVybWFufGVufDB8fDB8fHww" alt="SpiderMan">
+                <p> Spider-Man's secret identity is Peter Benjamin Parker. Initially, Peter was depicted as a teenage high-school student and an orphan raised by his Aunt May and Uncle Ben in New York City after his parents Richard and Mary Parker died in a plane crash. Lee and Ditko had the character deal with the struggles of adolescence and financial issues and gave him many supporting characters, such as Flash Thompson, J. Jonah Jameson, and Harry Osborn; romantic interests Gwen Stacy, Mary Jane Watson, and the Black Cat; and enemies such as the Green Goblin, Doctor Octopus, and Venom. In his origin story, Spider-Man gets his superhuman spider-powers and abilities after being bitten by a radioactive spider. These powers include superhuman strength, agility, reflexes, stamina, durability, coordination, and balance; clinging to surfaces and ceilings like a spider; and detecting danger with his precognition ability called "spider-sense". He builds wrist-mounted "web-shooter" devices that shoot artificial spider-webs of his own design, which he uses both for fighting and for web-swinging across the city. Peter Parker originally used his powers for his own personal gain, but after his Uncle Ben was killed by a thief that Peter could not stop, he began to use his powers to fight crime by becoming Spider-Man.</p>
+    
+            </div>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    window.addEventListener("scroll", revealSection)
+                    function revealSection(){
+                        var sections= document.querySelectorAll(".Spidy");
+                        sections.forEach(function(section){
+                            var sectionTop=section.getBoundingClientRect().top;
+                            var windowHeight = window.innerHeight;
+                            if (sectionTop< windowHeight * 0.85){
+                                section.classList.remove("hidden");
+                            }
+                        })
+
+
+                    }
+
+                })
+            </script>
+    
+    </body>
+</html>
