@@ -117,14 +117,14 @@
 
             <script>
                 document.addEventListener("DOMContentLoaded", function() {
-                    window.addEventListener("scroll", reveal)
-                    function reveal(){
+                    window.addEventListener("scroll", revealsection)
+                    function revealsection(){
                         var sections= document.querySelectorAll(".Spidy");
                         sections.forEach(function(section){
                             var sectionTop=section.getBoundingClientRect().top;
                             var windowHeight = window.innerHeight;
                             if (sectionTop< windowHeight * 0.85){
-                                reveal.classList.remove("hidden");
+                                revealsection.classList.remove("hidden");
                             }
                         })
 
