@@ -117,8 +117,8 @@
 
             <script>
                 document.addEventListener("DOMContentLoaded", function() {
-                    window.addEventListener("scroll", revealsection)
-                    function revealsection(){
+                    window.addEventListener("scroll", revealSection)
+                    function revealSection(){
                         var sections= document.querySelectorAll(".Spidy");
                         sections.forEach(function(section){
                             var sectionTop=section.getBoundingClientRect().top;
