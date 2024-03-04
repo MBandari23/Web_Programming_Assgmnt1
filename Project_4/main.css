@@ -2,10 +2,11 @@ body{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .bgcontent{
-    background-color: rgb(124, 152, 131);
+    background-color: rgb(236, 244, 239);
    justify-content: center;
     padding: 100px;
     margin:0;
+    height: auto;
     
 }
 .nav_bar{
@@ -26,7 +27,10 @@ body{
     padding: 100px;
     height: auto;
     width:100%;
-    text-align: center;
+    text-align: center;  
+}
+.container1 h1{
+    animation: slideIn 5s ease-in-out;
 }
 #image{
     justify-content: left;
@@ -39,8 +43,11 @@ body{
     justify-content: right;
 }
 .footer{
-    background-color: rgb(76, 84, 75);
-    height: 20%;
+    position: relative;
+   /* Negative value of footer height */
+  height: 100px;
+  clear: both;
+  background-color: rgb(76, 84, 75);
 }
 @media (min-width: 768px) { 
     .container1, .bgcontent {
@@ -58,5 +65,15 @@ body{
     }
     .footer {
         padding: 10px 0; 
+    }
+}
+@keyframes slideIn {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
     }
 }

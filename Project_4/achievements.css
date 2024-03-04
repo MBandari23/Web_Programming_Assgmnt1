@@ -1,0 +1,24 @@
+.bgcon img{
+    height: 10%;
+    width: 30%;
+}
+.bgcon{
+    margin-bottom: 50px;
+}
+.bgcontent1{
+    background-color: rgb(212, 221, 218);
+    padding-bottom: 60px;
+}
+@media (min-width: 992px) { 
+    .nav_bar {
+        padding: 0.5%; 
+    }
+    .footer {
+        padding: 10px 0; 
+    }
+}
+@media (min-width: 768px) { 
+    .container1_ga, .achievement {
+        padding: 50px; 
+    }
+}
