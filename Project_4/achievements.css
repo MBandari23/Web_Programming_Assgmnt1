@@ -16,9 +16,16 @@
     .footer {
         padding: 10px 0; 
     }
+    .container1_ga, .achievement , .row{
+        padding: 50px; 
+    }
 }
 @media (min-width: 768px) { 
     .container1_ga, .achievement , .row{
-        padding: 50px; 
+        padding: 30px; 
+    }
+    .bgcon img {
+        height: auto; 
+        width: 100%; 
     }
 }
