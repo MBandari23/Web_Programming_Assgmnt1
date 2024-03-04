@@ -18,7 +18,7 @@
     }
 }
 @media (min-width: 768px) { 
-    .container1_ga, .achievement {
+    .container1_ga, .achievement , .row{
         padding: 50px; 
     }
 }
