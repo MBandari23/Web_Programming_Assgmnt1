@@ -49,13 +49,15 @@ body{
   clear: both;
   background-color: rgb(76, 84, 75);
 }
-@media (min-width: 768px) { 
+@media (max-width: 767px) { 
     .container1, .bgcontent {
         padding: 50px; 
     }
-    #content1, #image {
-        height: auto;
-        padding: 2%;
+    h1{
+        font-size: 20px;
+    }
+    p{
+        font-size: 14px;
     }
 }
 
