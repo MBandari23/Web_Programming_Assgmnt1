@@ -13,19 +13,23 @@
     .nav_bar {
         padding: 0.5%; 
     }
-    .footer {
-        padding: 10px 0; 
-    }
-    .container1_ga, .achievement , .row{
+    .container1_ga {
         padding: 50px; 
     }
 }
 @media (min-width: 768px) { 
-    .container1_ga, .achievement , .row{
+    .container1_ga{
         padding: 30px; 
     }
     .bgcon img {
         height: auto; 
         width: 100%; 
+    }
+}
+
+@media (max-width: 767px){
+    .TableOfContents, .NavInfo{
+        font-size: 12px;
+        padding: 15px;
     }
 }
