@@ -53,7 +53,7 @@ body{
     .container1, .bgcontent {
         font-size: 5px;
         padding: 8px;
-        height: auto;
+        height: 50%;
         
     }
     #content1, #image {
