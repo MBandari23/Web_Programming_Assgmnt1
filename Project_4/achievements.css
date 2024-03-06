@@ -26,10 +26,10 @@
         width: 100%; 
     }
 }
-
 @media (max-width: 767px){
-    .TableOfContents, .NavInfo{
-        font-size: 12px;
-        padding: 15px;
+    .TableOfContents, .NavInfo, .footer{
+        font-size: 5px;
+        padding: 8px;
+        height: auto;
     }
 }
