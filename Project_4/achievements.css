@@ -26,6 +26,7 @@
         width: 100%; 
     }
     .footer {
+        margin-top: 50px;
         padding: 10px 0; 
     }
 }
