@@ -51,14 +51,15 @@ body{
 }
 @media (min-width: 768px) { 
     .container1, .bgcontent {
-        font-size: 5px;
-        padding: 8px;
+        
+        
         height: 50%;
         
     }
     #content1, #image {
         height: 50%;
-        padding: 2%;
+        font-size: 5px;
+        padding: 8px;
     }
 }
 
