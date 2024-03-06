@@ -25,9 +25,12 @@
         height: auto; 
         width: 100%; 
     }
+    .footer {
+        padding: 10px 0; 
+    }
 }
 @media (max-width: 767px){
-    .TableOfContents, .NavInfo, .footer{
+    .TableOfContents, .NavInfo{
         font-size: 5px;
         padding: 8px;
         height: auto;
