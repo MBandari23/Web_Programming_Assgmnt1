@@ -54,7 +54,7 @@ body{
         padding: 50px; 
     }
     #content1, #image {
-        
+        height: auto;
         padding: 2%;
     }
 }
