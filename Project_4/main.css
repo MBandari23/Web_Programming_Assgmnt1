@@ -53,14 +53,14 @@ body{
     .container1, .bgcontent {
         padding: 50px; 
     }
-    h1{
+    .content, img{
+        padding: 5px;
+    }
+    .content h1{
         font-size: 20px;
     }
-    p{
+    .content p{
         font-size: 14px;
-    }
-    #image{
-        width: 50px;
     }
 }
 
