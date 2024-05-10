@@ -19,6 +19,40 @@
         .flashes {
             list-style-type: none;
         }
+        
+.cancel-link {
+    display: inline-block;
+    margin-left: 10px; 
+}
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.custom-table td {
+    padding: 5px 10px;
+    border: none;
+}
+
+.custom-table label {
+    font-weight: bold;
+    
+}
+
+.custom-table input[type="text"],
+.custom-table input[type="password"] {
+    width: 60%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    box-sizing:content-box;
+}
+
+.custom-table tr {
+    margin-bottom: 5px;
+}
+
+     
     </style>
     <body>
         <div class="messages">
@@ -37,24 +71,24 @@
         <h1>Registration</h1>
         <br>
         <form action="/register" method="POST">
-            <table>
+            <table class="custom-table">
                 <tr>
-                    <td><label for="user">User Name</label></td>
-                    <td><input type="text" id="user" name="user" required /></td>
+                    <td><label for="user"><strong>User Name</strong></label></td>
+                    <td><input type="text" id="user" name="user" placeholder="Enter Username" required /></td>
                 </tr>
                 <tr>
-                    <td><label for="password">Password</label></td>
-                    <td><input type="password" id="password" name="password" required /></td>
+                    <td><label for="password"><strong>Password</strong></label></td>
+                    <td><input type="password" id="password" name="password" placeholder="Enter Password" required /></td>
                 </tr>
                 <tr>
-                    <td><label for="confirm_password">Confirm Password</label></td>
-                    <td><input type="password" id="confirm_password" name="confirm_password" required /></td>
+                    <td><label for="confirm_password"><strong>Confirm Password</strong></label></td>
+                    <td><input type="password" id="confirm_password" name="confirm_password" placeholder=" Please Confirm Password" /></td>
                 </tr>
             </table>
             <br>
-            <button  type="submit" class="btn btn-primary">Register</button>
-            <br>
-            <a href="/login" style="color: black;">Cancel</a>
+            <button type="submit" class="btn btn-primary">Register</button>
+            
+            <a href="/login" class="cancel-link" style="color: black;">Cancel</a>
         </form>
     </div>
     </body>

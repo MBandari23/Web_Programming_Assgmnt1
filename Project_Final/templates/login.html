@@ -52,17 +52,18 @@
     <div class="top-right">
        <button type = "submit" class="btn btn-primary"><a href="/register" class="btn btn-primary">Register</a></button> 
     </div>
-    <h1>Basic CRUD app</h1> 
+    
+    <h1>Our Quotes Application With CRUD Operations</h1> 
     <div id="loginApp" class="middle">
         <h2>Please Enter Your Credentials</h2>
         <form @submit.prevent="login">
             <div class="mb-3">
-                <label for="user" class="form-label">User Name</label>
-                <input type="text" class="form-control" id="user" v-model="credentials.username">
+                <label for="user" class="form-label"><strong>User Name</strong></label>
+                <input type="text" class="form-control" id="user" v-model="credentials.username" placeholder="Enter Username">
             </div>
             <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" v-model="credentials.password">
+                <label for="password" class="form-label" aria-placeholder="Enter your password"><strong>Password</strong></label>
+                <input type="password" class="form-control" id="password" v-model="credentials.password" placeholder="Enter Password">
             </div>
             <button type="submit" class="btn btn-primary">Login</button>
             <a href="/" class="btn btn-link">Cancel</a>

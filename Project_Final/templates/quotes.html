@@ -41,8 +41,12 @@
 .search-container {
     min-height: 70px; 
 }
-
-    </style>
+.delete-comment-btn {
+        margin-left: 50px; /* Adjust this value as needed */
+        margin-top: 3px; /* Add margin-top to create some distance */
+        
+    }
+</style>
 
 <body>
     <div class="container mt-3 custom-height d-flex justify-content-between align-items-center">
@@ -65,7 +69,7 @@
     <table class="table">
         <thead class="thead_">
             <tr>
-                <th>Text</th>
+                <th>Quote</th>
                 <th>Author</th>
                 <th>Source</th>
                 <th>Date</th>
@@ -110,6 +114,7 @@
                     <ul class="comment-list">
                         {% for comment in item.comments %}
                         <li>{{ comment.text }} by {{ comment.user }} at {{ comment.created_at }}</li>
+                        <button type="button" class="btn btn-danger delete-comment-btn">Delete</button>
                         {% endfor %}
                     </ul>
                 </td>
@@ -126,37 +131,70 @@
     document.getElementById('searchInput').addEventListener('input', function() {
         let searchValue = this.value.toLowerCase();
         const rows = document.querySelectorAll('#quotesTable tr');
+
         rows.forEach(row => {
             const isVisible = Array.from(row.children).some(td => td.textContent.toLowerCase().includes(searchValue));
             row.style.display = isVisible ? '' : 'none';
         });
     });
 
-    document.querySelectorAll('.add-comment-form').forEach(form => {
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the form from submitting the standard way
-            const formData = new FormData(this);
-            const quoteId = this.action.split('/').pop(); // Extract quoteId from the form action
+    document.addEventListener('DOMContentLoaded', function() {
+        // Function to handle form submission and display newly added comments
+        const handleCommentSubmission = function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            const form = this;
+            const commentInput = form.querySelector('.comment-input');
+            const comment = commentInput.value.trim();
+            if (comment !== '') {
+                const commentList = form.parentElement.querySelector('.comment-list');
+                const newComment = document.createElement('li');
+                newComment.textContent = `${comment} by {{ user }} at ${new Date().toLocaleString()}`;
+                
+                // Create delete button for the new comment
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.classList.add('btn', 'btn-danger', 'delete-comment-btn');
+                deleteButton.addEventListener('click', handleCommentDeletion); // Add event listener for deletion
+                newComment.appendChild(deleteButton);
 
-            fetch(`/add_comment/${quoteId}`, {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    // Append the new comment
-                    const commentsList = this.parentNode.querySelector('.comment-list');
-                    const newComment = document.createElement('li');
-                    newComment.textContent = `${data.comment.text} by ${data.comment.user} at ${data.comment.created_at}`;
-                    commentsList.appendChild(newComment);
-                    this.reset(); // Reset form fields after submission
-                } else {
-                    alert('Failed to add comment: ' + data.message);
-                }
-            })
-            .catch(error => console.error('Error adding comment:', error));
+                // Append the new comment to the comment list
+                commentList.appendChild(newComment);
+                commentInput.value = '';
+
+                // Send AJAX request to add comment
+                const quoteId = form.getAttribute('action').split('/').pop();
+                const formData = new FormData(form);
+                
+                fetch(`/add_comment/${quoteId}`, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest', // Set X-Requested-With header for Flask AJAX detection
+                    },
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Assuming data is not used for redirection
+                    console.log('Comment added successfully:', data);
+                })
+                .catch(error => {
+                    console.error('Error adding comment:', error);
+                });
+            }
+        };
+
+        // Handle form submission for each add comment form
+        const addCommentForms = document.querySelectorAll('.add-comment-form');
+        addCommentForms.forEach(form => {
+            form.addEventListener('submit', handleCommentSubmission);
         });
+
+        // Function to handle comment deletion
+        const handleCommentDeletion = function(event) {
+            const comment = event.target.parentElement;
+            comment.remove();
+        };
     });
 </script>
 </body>

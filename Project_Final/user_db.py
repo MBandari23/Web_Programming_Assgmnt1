@@ -1,4 +1,4 @@
-# Create a Mongita database with movie information
+# Create a Mongita database 
 import json
 from mongita import MongitaClientDisk
 from werkzeug.security import generate_password_hash

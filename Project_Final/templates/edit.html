@@ -61,7 +61,7 @@
                         <label for="is_public">Public</label>
                     </td>
                     <td class="col">
-                        <input type="checkbox" id="is_public" name="is_public" value="{{ data['is_public']}}"/>        
+                        <input type="checkbox" id="is_public" name="is_public" {% if data["is_public"] %}checked{% endif %}/>        
                     </td>
                 </tr>
                 <tr class="row" >
@@ -69,7 +69,7 @@
                         <label for="comments_allowed">Comments Allowed</label>
                     </td>
                     <td class="col">
-                        <input type="checkbox" id="comments_allowed" name="comments_allowed" value="{{ data['comments_allowed']}}"/>
+                        <input type="checkbox" id="comments_allowed" name="comments_allowed" {% if data["comments_allowed"] %}checked{% endif %}/>
                     </td>
                 </tr>
 
